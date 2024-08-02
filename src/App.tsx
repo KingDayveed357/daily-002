@@ -1,5 +1,9 @@
 
-import paypal from "./assets/images/paypal.jpeg"
+import paypal from "./assets/images/paypal2.png"
+import visa from "./assets/images/visa.jpeg"; // Add the path to your Visa image
+import mastercard from "./assets/images/mastercard-img.png";
+import discover from "./assets/images/discover.png";
+import amex from "./assets/images/amex.png"
 
 function App() {
 
@@ -28,12 +32,29 @@ function App() {
         <div className="border-t-2 mt-5">
           <p className="font-semibold text-xl mt-4">Payment Method</p>
         </div>
-        <button className="mt-10  bg-[#FFC439] btn w-full hover:bg-yellow-400 btn-lg text-white">Paypal</button>
-        <p className="text-center text-gray-700 mt-5">__________ or __________</p>
+        <button className="mt-10 bg-[#FFD140] btn w-full hover:bg-[#FFD140] btn-lg text-white flex items-center justify-center">
+            <img src={paypal} className="w-20 bg-transparent" alt="PayPal" />
+          </button>
+
+        <div className="flex items-center mx-20 font-extralight py-4 mt-2 text-sm">
+              <hr className="flex-grow  border-gray-200" />
+              <p className="text-center text-gray-700 mx-2">or</p>
+              <hr className="flex-grow border-gray-200" />
+            </div>
         <form action="#" className="">
-          <div className="form-control">
-          <input type="text" placeholder="Card Number" className="input input-bordered w-full my-5" />
-          </div>
+        <div className="relative form-control">
+                <input
+                  type="text"
+                  placeholder="Card Number"
+                  className="input input-bordered w-full my-5"
+                />
+                <div className="absolute inset-y-0 right-0 flex gap-2 mr-2 items-center pl-2">
+                  <img src={visa} alt="Visa" className="h-6 w-11 rounded-sm" />
+                  <img src={amex} alt="Visa" className="h-9 w-10 " />
+                  <img src={mastercard} alt="MasterCard" className="h-6 w-10" />
+                  <img src={discover} alt="Visa" className="h-8 w-10 " />
+                </div>
+              </div>
           <div className=" flex gap-4 mb-5">
           <input type="text" placeholder="Expiration" className="input input-bordered w-full" />
           <input type="text" placeholder="CVV" className="input input-bordered w-full " />
@@ -52,6 +73,7 @@ function App() {
      
        <div className="md:mx-5 mx-0 ">
         <div className="border  flex flex-col">
+        
           <div className="md:mx-7 mx-4 py-5">
       <div className=" flex justify-between my-5">
       <p className="font-semibold">Shopping Cart</p>
@@ -102,7 +124,9 @@ function App() {
   </table>
 </div>
           </div>
+      
       </div>
+      
       </div>
       </div>
      
